@@ -1,35 +1,33 @@
 package org.cloud.route;
 
-import javax.servlet.http.HttpServletRequest;
-
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import org.cloud.dao.ContactDAO;
+import org.cloud.dao.PhotoDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.alibaba.fastjson.JSON;
-
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
-public class ContactController {
+public class PhotoController {
     @Autowired
-    private ContactDAO dao;
+    private PhotoDAO dao;
 
-    public ContactDAO getDao() {
+    public PhotoDAO getDao() {
         return dao;
     }
 
-    public void setDao(ContactDAO dao) {
+    public void setDao(PhotoDAO dao) {
         this.dao = dao;
     }
 
-    @RequestMapping(value = "/api/contacts", produces = {"application/json;charset=UTF-8"})
+    @RequestMapping(value = "/api/photos", produces = {"application/json;charset=UTF-8"})
     public
     @ResponseBody
-    String execute(HttpServletRequest req) {
+    String calls(HttpServletRequest req) {
         JSONObject obj = new JSONObject();
         List list = dao.findAll();
         obj.put("count", list.size());
@@ -38,4 +36,14 @@ public class ContactController {
         System.out.println("success");
         return result;
     }
+
+    @RequestMapping(value = "/api/photo/delete", produces = {"application/json;charset=UTF-8"})
+    public
+    @ResponseBody
+    String delete(HttpServletRequest req) {
+        //TODO
+        System.out.println("success");
+        return "success";
+    }
+
 }

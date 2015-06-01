@@ -1,4 +1,4 @@
-package org.cloud.dao;
+package org.cloud.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

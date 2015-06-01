@@ -1,6 +1,8 @@
 package org.cloud.dao;
 
 import java.util.List;
+
+import org.cloud.entity.User;
 import org.hibernate.LockMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +17,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
  * provides additional information for how to configure it for the desired type
  * of transaction control.
  * 
- * @see org.cloud.dao.User
+ * @see User
  * @author MyEclipse Persistence Tools
  */
 public class UserDAO extends HibernateDaoSupport {
@@ -55,7 +57,7 @@ public class UserDAO extends HibernateDaoSupport {
 		log.debug("getting User instance with id: " + id);
 		try {
 			User instance = (User) getHibernateTemplate().get(
-					"org.cloud.dao.User", id);
+					"org.cloud.entity.User", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);

@@ -1,7 +1,8 @@
 package org.cloud.dao;
 
 import java.util.List;
-import java.util.Set;
+
+import org.cloud.entity.Conversation;
 import org.hibernate.LockMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +17,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
  * transactions. Each of these methods provides additional information for how
  * to configure it for the desired type of transaction control.
  * 
- * @see org.cloud.dao.Conversation
+ * @see Conversation
  * @author MyEclipse Persistence Tools
  */
 public class ConversationDAO extends HibernateDaoSupport {
@@ -56,7 +57,7 @@ public class ConversationDAO extends HibernateDaoSupport {
 		log.debug("getting Conversation instance with id: " + id);
 		try {
 			Conversation instance = (Conversation) getHibernateTemplate().get(
-					"org.cloud.dao.Conversation", id);
+					"org.cloud.entity.Conversation", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);

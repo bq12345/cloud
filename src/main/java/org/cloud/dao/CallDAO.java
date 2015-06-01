@@ -1,7 +1,8 @@
 package org.cloud.dao;
 
-import java.sql.Timestamp;
 import java.util.List;
+
+import org.cloud.entity.Call;
 import org.hibernate.LockMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +17,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
  * provides additional information for how to configure it for the desired type
  * of transaction control.
  * 
- * @see org.cloud.dao.Call
+ * @see Call
  * @author MyEclipse Persistence Tools
  */
 public class CallDAO extends HibernateDaoSupport {
@@ -57,7 +58,7 @@ public class CallDAO extends HibernateDaoSupport {
 		log.debug("getting Call instance with id: " + id);
 		try {
 			Call instance = (Call) getHibernateTemplate().get(
-					"org.cloud.dao.Call", id);
+					"org.cloud.entity.Call", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);

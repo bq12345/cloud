@@ -1,6 +1,8 @@
 package org.cloud.dao;
 
 import java.util.List;
+
+import org.cloud.entity.Contact;
 import org.hibernate.LockMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +17,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
  * methods provides additional information for how to configure it for the
  * desired type of transaction control.
  * 
- * @see org.cloud.dao.Contact
+ * @see Contact
  * @author MyEclipse Persistence Tools
  */
 public class ContactDAO extends HibernateDaoSupport {
@@ -57,7 +59,7 @@ public class ContactDAO extends HibernateDaoSupport {
 		log.debug("getting Contact instance with id: " + id);
 		try {
 			Contact instance = (Contact) getHibernateTemplate().get(
-					"org.cloud.dao.Contact", id);
+					"org.cloud.entity.Contact", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);

@@ -1,4 +1,4 @@
-package org.cloud.dao;
+package org.cloud.entity;
 
 import java.util.HashSet;
 import java.util.Set;

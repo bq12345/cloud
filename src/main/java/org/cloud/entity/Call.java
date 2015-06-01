@@ -1,4 +1,4 @@
-package org.cloud.dao;
+package org.cloud.entity;
 
 import java.sql.Timestamp;
 import javax.persistence.Column;

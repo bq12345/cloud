@@ -10,13 +10,13 @@
 		<property name="configLocation" value="classpath:hibernate.cfg.xml"></property>
 		<property name="annotatedClasses">
 			<list>
-				<value>org.cloud.dao.User</value>
-				<value>org.cloud.dao.Call</value>
-				<value>org.cloud.dao.Contact</value>
-				<value>org.cloud.dao.Sms</value>
-				<value>org.cloud.dao.Conversation</value>
-				<value>org.cloud.dao.Photo</value>
-				<value>org.cloud.dao.Note</value>
+				<value>org.cloud.entity.User</value>
+				<value>org.cloud.entity.Call</value>
+				<value>org.cloud.entity.Contact</value>
+				<value>org.cloud.entity.Sms</value>
+				<value>org.cloud.entity.Conversation</value>
+				<value>org.cloud.entity.Photo</value>
+				<value>org.cloud.entity.Note</value>
 			</list>
 		</property>
 	</bean>
